@@ -1,66 +1,108 @@
-# Simple Calculator
+# TDD: Testing Your Modularised Calculator
 
 ## Challenge
 
-In this exercise, you will build a simple calculator using JavaScript functions. The calculator will accept two numbers and an operation as arguments (e.g., "add", "subtract", "multiply"). The function should use conditional logic to determine which operation to perform. As a bonus, you will add input validation to ensure the function only accepts numbers as valid arguments.
+In this challenge, you will apply **Test Driven Development (TDD)** to the modularised calculator you built in the previous session. The goal is to write a set of automated tests for each calculator function (add, subtract, multiply, divide).
 
-Additionally, explore using a `switch/case` statement to handle the different operations.
+The tests should work reliably and cover all edge cases to ensure your calculator module functions correctly across different scenarios. Once all tests pass, you will create a demonstration video to show the application and testing procedure.
+
+## Submission Requirements:
+
+- **GitHub Repository**: Submit a link to your GitHub repo containing your calculator module and tests.
+- **Video Walkthrough**: Record a video demonstrating:
+
+  1. The application working.
+  2. The testing process (running tests and showing that they pass).
+
+  You can use screen recording tools such as **Screencastify** or **QuickTime**. Audio is optional, and the video should focus on showing the working tests.
+
+### Tools:
+
+- **Jest** or any other testing framework of your choice.
+- **Screencastify**, **QuickTime**, or any other screen recording software for the video submission.
 
 ## Key Learnings
 
-By completing this exercise, you will:
-
-- Understand how to define and call functions in JavaScript.
-- Learn how to pass arguments into a function and use them within the function body.
-- Implement conditional logic to handle different operations.
-- Learn how to use `switch/case` statements.
-- Validate function inputs to ensure only numbers are accepted.
+- Understand how to apply **Test Driven Development (TDD)** principles in an existing project.
+- Learn how to write and implement tests to ensure code reliability and correctness.
+- Gain experience using **screen recording tools** to demonstrate project functionality.
 
 ## User Story
 
-As a JavaScript beginner, I want to create a function that performs basic calculator operations so I can understand how functions, arguments, and conditions work together in JavaScript.
+As a developer, I want to ensure my modularised calculator functions correctly through automated tests, so that I can confidently use it in other projects. I also want to document and present the working application with test coverage using a video walkthrough.
 
 ## Acceptance Criteria
 
-1. **Create a Function**:
-   - Write a function named `calculate` that takes three arguments: two numbers and a string representing the operation (e.g., `"add"`, `"subtract"`, `"multiply"`, `"divide"`).
-2. **Handle Basic Operations**:
-   - Using conditional logic (either `if/else` or a `switch/case`), implement the following operations:
-     - `add` should return the sum of the two numbers.
-     - `subtract` should return the difference.
-     - `multiply` should return the product.
-     - `divide` should return the result of dividing the first number by the second.
-3. **Input Validation**:
-   - Ensure that both numbers passed as arguments are valid numbers.
-   - If invalid input is passed (e.g., a string instead of a number), the function should return an error message like: `"Invalid input: both arguments must be numbers."`
-4. **Default Case for Unknown Operations**:
-   - If the operation passed in is not recognized (e.g., `"addd"`), return an error message such as `"Unknown operation. Please use 'add', 'subtract', 'multiply', or 'divide'."`
-5. **Bonus**:
-   - Implement the function using a `switch/case` statement instead of `if/else` for the operation handling.
+- You have written automated tests for all calculator functions (add, subtract, multiply, divide).
+- Your tests cover normal operations and edge cases (e.g., division by zero, negative numbers).
+- All tests pass successfully.
+- You have submitted a GitHub repo containing:
+  - The calculator module.
+  - The test files.
+- You have submitted a **video walkthrough** demonstrating:
+  - The calculator functionality.
+  - The testing process, with all tests passing.
 
-## Example Usage
+---
 
-```javascript
-// Example valid usage:
-calculate(10, 5, "add"); // Output: 15
-calculate(10, 5, "subtract"); // Output: 5
-calculate(10, 5, "multiply"); // Output: 50
-calculate(10, 5, "divide"); // Output: 2
+## Steps to Complete
 
-// Example invalid usage:
-calculate(10, "five", "add"); // Output: "Invalid input: both arguments must be numbers."
-calculate(10, 5, "square"); // Output: "Unknown operation. Please use 'add', 'subtract', 'multiply', or 'divide'."
+### Step 1: Set Up Your Test Environment
+
+1. Install a testing framework such as **Jest**:
+   ```bash
+   npm install --save-dev jest
+   ```
+2. Configure your test script in package.json
+
+   ```bash
+   "scripts": {
+   "test": "jest"
+   }
+   ```
+
+### Step 2: Write Tests for Each Calculator Function
+
+1. Write unit tests for each function:
+
+- Addition: Test basic addition, negative numbers, and zero.
+- Subtraction: Test simple subtraction, edge cases like subtracting from zero.
+- Multiplication: Test multiplication with positive and negative numbers, multiplication by zero.
+- Division: Test division by zero, negative numbers, and division of integers and floats.
+
+Example test for the add function using Jest:
+
+```bash
+const { add } = require('./calculator');
+
+test('adds 2 + 3 to equal 5', () => {
+  expect(add(2, 3)).toBe(5);
+});
 ```
 
-## Additional Requirements
+### Step 3: Run Your Tests
 
-- Test your function in the browser console to ensure all outputs are correct.
-- Add comments to explain the function logic, especially for input validation and handling different operations.
+1. Run the tests to ensure they pass:
+
+```bash
+npm run test
+```
+
+2. Ensure the tests cover different edge cases.
+
+### Step 4: Record Your Video Walkthrough
+
+1. Use Screencastify, QuickTime, or any other screen recording tool.
+2. Record the following:
+
+- Running the calculator functions.
+- Running the automated tests and showing all tests passing.
+
+3. Save the video and upload it to your preferred platform (Google Drive, YouTube, etc.).
 
 ## Useful Resources
 
-1. [MDN Web Docs: JavaScript Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)  
-   Learn more about defining and using functions in JavaScript.
-
-2. [MDN Web Docs: `switch` statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)  
-   A guide on using `switch` statements in JavaScript to handle multiple cases based on the input.
+- [Jest Documentation](https://jestjs.io/docs/getting-started) - Official Jest documentation for getting started with testing.
+- [TDD Guide](https://www.freecodecamp.org/news/an-introduction-to-test-driven-development-c3a321bd2f2c/) - An introduction to Test Driven Development.
+- [Screencastify](https://www.screencastify.com/) - A simple tool for recording and sharing your screen.
+- [QuickTime Guide](https://support.apple.com/guide/quicktime-player/record-your-screen-qtp97b08e666/mac) - Guide to using QuickTime for screen recording.
