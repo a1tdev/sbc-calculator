@@ -1,6 +1,6 @@
 "use strict";
 
-// Simple Calculator
+// Simple Calculator Assignment
 
 let calculate = function (number1, number2, operation) {
   //2) the if statement first checks if the numbers are valid.
@@ -36,7 +36,7 @@ console.log(result); // 8) finally the variable is logged to the console.
 
 //////////////////////////////////////////////////////////////////////////////////////
 
-// BUILT IN CALCULATOR
+// PERSONAL CHALLENGE - BUILT IN CALCULATOR
 
 let screen = document.getElementById("screen"); // Stores screen id in screen variable
 let btnContainer = document.querySelectorAll("#btnContainer button"); // Stores all buttons in btnContainer
